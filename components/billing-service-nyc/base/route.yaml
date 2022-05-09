@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: billing-service-nyc
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: billing-service-nyc
+    app.kubernetes.io/part-of: test-app
+  name: billing-service-nyc
+  namespace: rhn-support-djodha
+spec:
+  port:
+    targetPort: 8080
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: billing-service-nyc
+    weight: 100
+status: {}

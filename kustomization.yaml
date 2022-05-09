@@ -1,4 +1,5 @@
 bases:
 - components/1-java-quarkus/base
+- components/billing-service-nyc/base
 resources:
 - common-storage-pvc.yaml
