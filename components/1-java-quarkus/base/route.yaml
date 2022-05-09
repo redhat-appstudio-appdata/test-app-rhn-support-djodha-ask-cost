@@ -1,0 +1,23 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: 1-java-quarkus
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: 1-java-quarkus
+    app.kubernetes.io/part-of: test-app
+  name: 1-java-quarkus
+  namespace: rhn-support-djodha
+spec:
+  port:
+    targetPort: 8081
+  tls:
+    insecureEdgeTerminationPolicy: Redirect
+    termination: edge
+  to:
+    kind: Service
+    name: 1-java-quarkus
+    weight: 100
+status: {}
